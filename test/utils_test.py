@@ -4,6 +4,7 @@ from common import utils
 import pytest
 from PIL import Image, ImageChops
 import numpy as np
+from typing import Tuple
 
 CHANNEL_COLUMNS = ['R', 'G', 'B', 'A']
 
@@ -12,9 +13,9 @@ def generate_random_test_image() -> Image:
     im = Image.fromarray(imarray.astype('uint8')).convert('RGBA')
     return im
 
-def dataframe_to_image(image_df) -> Image:
+def dataframe_to_image(image_df, size: Tuple[int, int] = (100,100)) -> Image:
     df = image_df[CHANNEL_COLUMNS]
-    im = Image.new("RGBA", df.size)
+    im = Image.new("RGBA", size)
     im.putdata(list(df.itertuples(index=False)))
     return im
 
