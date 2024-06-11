@@ -1,11 +1,11 @@
 import numpy as np
-import PIL
+from PIL import Image
 import pandas as pd
 
 def flatten_array(in_array: np.array) -> np.array:
     return in_array.reshape(-1, in_array.shape[-1])
 
-def image_to_dataframe(in_image: PIL.Image, positional: bool = True) -> pd.DataFrame:
+def image_to_dataframe(in_image: Image.Image, positional: bool = True) -> pd.DataFrame:
     image_array = np.array(in_image)
     
     if not positional: 
