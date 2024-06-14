@@ -14,3 +14,5 @@ Future use cases to be covered:
 - Vectorize images
 - Export vectorized images
 - Print setup/ image resizing 
+
+1. 
